@@ -7,7 +7,7 @@
 
     {{-- Form control section --}}
     <div class="col-lg-8">
-        <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="mb-5" enctype="multipart/form-data">
+        <form action="url('/dashboard/posts/{{ $post->slug }}')" method="post" class="mb-5" enctype="multipart/form-data">
             @method('put')
             @csrf
             <div class="mb-3">

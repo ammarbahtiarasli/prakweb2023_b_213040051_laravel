@@ -13,7 +13,7 @@
     @endif
 
     <div class="table-responsive col-lg-6">
-        <a href="/dashboard/categories/create" class="btn btn-primary mb-3">Create new category</a>
+        <a href="url('/dashboard/categories/create')" class="btn btn-primary mb-3">Create new category</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -28,11 +28,11 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $category->name }}</td>
                         <td>
-                            <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info"><span
+                            <a href="url('/dashboard/categories/{{ $category->slug }}')" class="badge bg-info"><span
                                     data-feather="eye"></span></a>
-                            <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning"><span
+                            <a href="url('/dashboard/categories/{{ $category->slug }}/edit')" class="badge bg-warning"><span
                                     data-feather="edit"></span></a>
-                            <form action="/dashboard/categories/{{ $category->slug }}" method="post" class="d-inline">
+                            <form action="url('/dashboard/categories/{{ $category->slug }}')" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span

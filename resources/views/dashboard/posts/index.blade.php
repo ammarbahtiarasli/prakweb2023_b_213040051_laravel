@@ -7,7 +7,7 @@
     </div>
 
     <div class="table-responsive col-lg-8">
-        <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new post</a>
+        <a href="url('/dashboard/posts/create')" class="btn btn-primary mb-3">Create new post</a>
         @if (session()->has('success'))
             <div class="alert alert-success col-lg-8" role="alert">
                 {{ session('success') }}
@@ -29,11 +29,11 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->category->name }}</td>
                         <td>
-                            <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><span
+                            <a href="url('/dashboard/posts/{{ $post->slug }}')" class="badge bg-info"><span
                                     data-feather="eye"></span></a>
-                            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning"><span
+                            <a href="url('/dashboard/posts/{{ $post->slug }}/edit')" class="badge bg-warning"><span
                                     data-feather="edit"></span></a>
-                            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                            <form action="url('/dashboard/posts/{{ $post->slug }}')" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span

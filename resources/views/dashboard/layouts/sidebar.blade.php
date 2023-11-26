@@ -3,14 +3,14 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }} text-decoration-none text-dark"
-                    aria-current="page" href="/dashboard">
+                    aria-current="page" href="url('/dashboard')">
                     <i data-feather="home"></i>
                     Dashboard
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }} text-decoration-none text-dark"
-                    href="/dashboard/posts">
+                    href="url('/dashboard/posts')">
                     <i data-feather="file-text"></i>
                     My Posts
                 </a>
@@ -24,7 +24,7 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }} text-decoration-none text-dark"
-                    href="/dashboard/categories">
+                    href="url('/dashboard/categories')">
                     <i data-feather="grid"></i>
                     Post Categories
                 </a>

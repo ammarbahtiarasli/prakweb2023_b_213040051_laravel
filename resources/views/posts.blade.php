@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <form action="/posts">
+            <form action="url('/posts')">
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
@@ -33,19 +33,19 @@
                     alt="{{ $posts[0]->category->name }}">
             @endif
             <div class="card-body text-center">
-                <h5 class="card-title"><a href="/posts/{{ $posts[0]->slug }}"
+                <h5 class="card-title"><a href="url('/posts/{{ $posts[0]->slug }}')"
                         class="text-decoration-none text-dark">{{ $posts[0]->title }}</a></h5>
                 <p>
                     <small class="text-body-secondary">
-                        By. <a href="/posts?category={{ $posts[0]->author->username }}"
+                        By. <a href="url('/authors/{{ $post->author->username }}"
                             class="text-secondary text-decoration-none">{{ $posts[0]->author->name }}</a> in <a
-                            href="/posts?category={{ $posts[0]->category->slug }}"
+                            href="url('/posts?category={{ $posts[0]->category->slug }}')"
                             class="text-info-emphasis text-decoration-none">{{ $posts[0]->category->name }}</a>
                         {{ $posts[0]->created_at->diffForHumans() }}
                     </small>
                 </p>
                 <p class="card-text">{{ $posts[0]->excerpt }}</p>
-                <a href="/posts/{{ $posts[0]->slug }}" class="btn btn-primary text-decoration-none">Read more</a>
+                <a href="url('/posts/{{ $posts[0]->slug }}')" class="btn btn-primary text-decoration-none">Read more</a>
             </div>
         </div>
 
@@ -69,13 +69,13 @@
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <p>
                                     <small class="text-body-secondary">
-                                        By. <a href="/posts?author={{ $post->author->username }}"
+                                        By. <a href="url('/posts?author={{ $post->author->username }}')"
                                             class="text-secondary text-decoration-none">{{ $post->author->name }}</a>
                                         {{ $post->created_at->diffForHumans() }}
                                     </small>
                                 </p>
                                 <p class="card-text">{{ $post->excerpt }}</p>
-                                <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read more</a>
+                                <a href="url('/posts/{{ $post->slug }}')" class="btn btn-primary">Read more</a>
                             </div>
                         </div>
                     </div>

@@ -6,13 +6,13 @@
             <div class="col-lg-8">
                 <h1 class="mb-3">{{ $post->title }}</h1>
 
-                <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to My
+                <a href="url('/dashboard/posts')" class="btn btn-success"><span data-feather="arrow-left"></span> Back to My
                     Posts</a>
 
-                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span>
+                <a href="url('/dashboard/posts/{{ $post->slug }}/edit')" class="btn btn-warning"><span data-feather="edit"></span>
                     Edit</a>
 
-                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                <form action="url('/dashboard/posts/{{ $post->slug }}')" method="post" class="d-inline">
                     @method('delete')
                     @csrf
                     <button class="btn btn-danger border-0" onclick="return confirm('Are you sure?')"><span
